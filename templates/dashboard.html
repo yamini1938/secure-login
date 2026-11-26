@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block heading %}Dashboard{% endblock %}
+{% block content %}
+<p>Welcome, <strong>{{ username }}</strong>! You are logged in securely. ✅</p>
+<form method="POST" action="{{ url_for('logout') }}">
+  <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+  <button type="submit">Logout</button>
+</form>
+{% endblock %}
